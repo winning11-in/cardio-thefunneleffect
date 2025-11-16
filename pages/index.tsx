@@ -63,7 +63,8 @@ export default function Home({ blogPosts, popularPosts, categories }: HomeProps)
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-     const allBlogsResponse = await pagesAPI.getPagesByGroup('blogs', {
+     const allBlogsResponse = await pagesAPI.getPages({
+       groups: ['cardiology'],
       limit: 100,  
       page: 1
     });

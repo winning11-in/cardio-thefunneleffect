@@ -66,7 +66,7 @@ class PagesAPI {
       const response = await this.api.get('/pages', { 
         params: { 
           ...params,
-          groups: group
+          groups: [group]
         }
       });
       return response.data.data;

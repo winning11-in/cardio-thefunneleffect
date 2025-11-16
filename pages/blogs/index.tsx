@@ -270,7 +270,8 @@ const BlogsPage: React.FC<BlogsPageProps> = ({ posts: initialPosts, categories: 
 export const getStaticProps: GetStaticProps = async () => {
   try {
     // Get all blog posts at build time
-    const response = await pagesAPI.getPagesByGroup('blogs', {
+    const response = await pagesAPI.getPages({
+      groups: ['cardiology'],
       limit: 100, // Get all posts
       page: 1
     });

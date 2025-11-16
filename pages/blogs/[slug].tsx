@@ -215,7 +215,10 @@ const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ post }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const response = await pagesAPI.getPagesByGroup("blogs", { limit: 100 });
+    const response = await pagesAPI.getPages({
+      groups: ["cardiology"],
+      limit: 100
+    });
     const paths = response.pages.map((post) => ({
       params: { slug: post.slug },
     }));

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
-import { pagesAPI, ApiPage } from "@/services/api";
+import { ApiPage } from "@/services/api";
 
 const BlogCard: React.FC<{
   title: string;
@@ -85,103 +85,12 @@ const BlogCard: React.FC<{
 const BlogCards: React.FC<{
   limit?: number;
   showViewAll?: boolean;
-  posts?: ApiPage[];
-}> = ({ limit, showViewAll = false, posts: staticPosts }) => {
-  const [posts, setPosts] = useState<ApiPage[]>(staticPosts || []);
-  const [loading, setLoading] = useState(!staticPosts);
-  const [error, setError] = useState<string | null>(null);
+  posts: ApiPage[];
+}> = ({ limit, showViewAll = false, posts }) => {
 
-  useEffect(() => {
-    // Only fetch if no static posts provided
-    if (staticPosts) {
-      return;
-    }
+  const displayPosts = limit ? posts.slice(0, limit) : posts;
 
-    const fetchBlogPosts = async () => {
-      try {
-        setLoading(true);
-        const response = await pagesAPI.getPagesByGroup("blogs", {
-          limit: limit || 50,
-          page: 1,
-        });
-        setPosts(response.pages);
-        setError(null);
-      } catch (err) {
-        console.error("Error fetching blog posts:", err);
-        setError("Failed to load blog posts. Please try again later.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBlogPosts();
-  }, [limit, staticPosts]);
-
-  if (loading) {
-    return (
-      <section className="py-0">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {Array.from({ length: limit || 6 }).map((_, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-black rounded-xl shadow-sm overflow-hidden border border-gray-50 dark:border-gray-800 animate-pulse"
-            >
-              <div className="h-48 bg-gray-200 dark:bg-gray-700"></div>
-              <div className="p-5">
-                <div className="flex items-center space-x-2 mb-3">
-                  <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-16"></div>
-                  <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-1"></div>
-                  <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-16"></div>
-                </div>
-                <div className="h-5 bg-gray-200 dark:bg-gray-700 rounded mb-3"></div>
-                <div className="space-y-2 mb-4">
-                  <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded"></div>
-                  <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
-                </div>
-                <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-24"></div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section className="py-0">
-        <div className="text-center py-12">
-          <div className="text-red-500 mb-4">
-            <svg
-              className="w-12 h-12 mx-auto mb-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          </div>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            Unable to Load Blog Posts
-          </h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-4">{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-          >
-            Try Again
-          </button>
-        </div>
-      </section>
-    );
-  }
-
-  if (posts.length === 0) {
+  if (displayPosts.length === 0) {
     return (
       <section className="py-0">
         <div className="text-center py-12">
@@ -214,7 +123,7 @@ const BlogCards: React.FC<{
   return (
     <section className="py-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {posts.map((post) => (
+        {displayPosts.map((post) => (
           <BlogCard
             key={post._id}
             title={post.title}
@@ -228,7 +137,7 @@ const BlogCards: React.FC<{
         ))}
       </div>
 
-      {posts.length > 0 && (
+      {showViewAll && displayPosts.length > 0 && (
         <div className="text-center mt-8">
           <Link
             href="/blogs"
