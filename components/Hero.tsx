@@ -3,15 +3,22 @@ import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-emerald-50 dark:from-green-950 dark:via-gray-900 dark:to-emerald-950">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-sm"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/heroSec.jpg')",
         }}
       ></div>
+
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-gradient-to-r from-green-200/20 to-emerald-200/20 dark:from-green-800/20 dark:to-emerald-800/20"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-green-300/20 dark:bg-green-700/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-emerald-300/20 dark:bg-emerald-700/20 rounded-full blur-xl"></div>
+      </div>
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
@@ -19,17 +26,19 @@ const Hero: React.FC = () => {
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-[600] leading-tight">
-              <span className="font-serif">The Funnel Effect.</span>
+              The Funnel Effect
             </h1>
-            <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-2xl text-white max-w-2xl mx-auto leading-relaxed">
               Transform your knowledge journey with expert-led content.
               <br />
-              <span className="text-primary-300 font-medium">From code to cardiology - master what matters most.</span>
+              <span className="text-green-300 font-medium">
+                From code to cardiology - master what matters most.
+              </span>
             </p>
-            <div className="mt-4 text-sm md:text-base text-white/70 italic">
+            <div className="mt-4 text-sm md:text-base text-white/90 italic">
               "Where learning flows seamlessly from concept to mastery"
             </div>
-            <div className="mt-2 text-xs md:text-sm text-white/60">
+            <div className="mt-2 text-xs md:text-sm text-white/80">
               💡 Programming • 🫀 Cardiology • 📚 Knowledge • 🚀 Growth
             </div>
           </div>
@@ -38,7 +47,7 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/blogs"
-              className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-full font-semibold transition-colors"
+              className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
               Start Learning
             </Link>
@@ -48,7 +57,7 @@ const Hero: React.FC = () => {
           <div className="pt-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary-400">
+                <div className="text-2xl md:text-3xl font-bold text-green-300">
                   500+
                 </div>
                 <div className="text-sm text-white/80 uppercase tracking-wide">
@@ -56,7 +65,7 @@ const Hero: React.FC = () => {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary-400">
+                <div className="text-2xl md:text-3xl font-bold text-green-300">
                   25k+
                 </div>
                 <div className="text-sm text-white/80 uppercase tracking-wide">
@@ -64,7 +73,7 @@ const Hero: React.FC = () => {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary-400">
+                <div className="text-2xl md:text-3xl font-bold text-green-300">
                   15+
                 </div>
                 <div className="text-sm text-white/80 uppercase tracking-wide">
@@ -72,7 +81,7 @@ const Hero: React.FC = () => {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary-400">
+                <div className="text-2xl md:text-3xl font-bold text-green-300">
                   5+
                 </div>
                 <div className="text-sm text-white/80 uppercase tracking-wide">
