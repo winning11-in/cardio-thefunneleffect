@@ -271,8 +271,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     });
 
     // Check if the post belongs to the blogs group
-    if (!post.groups || !post.groups.includes("blogs")) {
-      console.log("Post not in blogs group. Groups:", post.groups);
+    if (!post.groups || !post.groups.includes("cardiology")) {
       return {
         notFound: true,
       };
