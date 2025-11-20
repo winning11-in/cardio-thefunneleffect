@@ -53,10 +53,8 @@ const Header: React.FC = () => {
 
             {/* Theme Toggle */}
             <div className="flex items-center">
-              <div className="p-2 rounded-lg hover:bg-green-50 dark:hover:bg-green-900/50 transition-colors duration-200">
-                <ThemeToggle />
-              </div>
-            </div>
+                 <ThemeToggle />
+             </div>
           </div>
         </div>
       </header>

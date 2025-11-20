@@ -1,45 +1,50 @@
-import React from 'react'
-import { Sun, Moon, Monitor } from 'lucide-react'
-import { useTheme } from '../contexts/ThemeContext'
+import React from "react";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "../contexts/ThemeContext";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
-    <div className="flex items-center space-x-1 bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
-      <button
-        onClick={() => setTheme('light')}
-        className={`p-2 rounded-md transition-all duration-200 ${
-          theme === 'light'
-            ? 'bg-white dark:bg-black shadow-md text-primary-500'
-            : 'text-gray-500 dark:text-gray-400 hover:text-primary-500 hover:bg-gray-200 dark:hover:bg-gray-700'
+    <button
+      onClick={toggleTheme}
+      className="relative w-14 h-8 bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900/50 dark:to-emerald-900/50 rounded-full p-1 transition-all duration-300   group"
+      title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+    >
+      {/* Toggle background */}
+      <div
+        className={`absolute inset-0 rounded-full transition-all duration-300 ${
+          theme === "dark"
+            ? "bg-gradient-to-r from-slate-800 to-slate-900"
+            : "bg-gradient-to-r from-yellow-200 to-orange-200"
         }`}
-        title="Light mode"
-      >
-        <Sun size={16} />
-      </button>
-      <button
-        onClick={() => setTheme('system')}
-        className={`p-2 rounded-md transition-all duration-200 ${
-          theme === 'system'
-            ? 'bg-white dark:bg-black shadow-md text-primary-500'
-            : 'text-gray-500 dark:text-gray-400 hover:text-primary-500 hover:bg-gray-200 dark:hover:bg-gray-700'
+      />
+
+      {/* Toggle slider */}
+      <div
+        className={`relative w-6 h-6 bg-white dark:bg-gray-800 rounded-full shadow-md transform transition-all duration-300 flex items-center justify-center ${
+          theme === "dark" ? "translate-x-6" : "translate-x-0"
         }`}
-        title="System mode"
       >
-        <Monitor size={16} />
-      </button>
-      <button
-        onClick={() => setTheme('dark')}
-        className={`p-2 rounded-md transition-all duration-200 ${
-          theme === 'dark'
-            ? 'bg-white dark:bg-black shadow-md text-primary-500'
-            : 'text-gray-500 dark:text-gray-400 hover:text-primary-500 hover:bg-gray-200 dark:hover:bg-gray-700'
+        {theme === "dark" ? (
+          <Moon className="w-4 h-4 text-blue-400" />
+        ) : (
+          <Sun className="w-4 h-4 text-yellow-500" />
+        )}
+      </div>
+
+      {/* Glow effect */}
+      <div
+        className={`absolute inset-0 rounded-full opacity-0  transition-opacity duration-300 ${
+          theme === "dark"
+            ? "shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+            : "shadow-[0_0_20px_rgba(251,191,36,0.3)]"
         }`}
-        title="Dark mode"
-      >
-        <Moon size={16} />
-      </button>
-    </div>
-  )
+      />
+    </button>
+  );
 }
