@@ -1,58 +1,38 @@
-import React from 'react';
-import { Play } from 'lucide-react';
+import React from "react";
+import { Play } from "lucide-react";
 
 const YouTubePlaylists: React.FC = () => {
-
   const playlists = [
     {
-      title: "Web Performance Optimization",
-      description: "Learn how to optimize your web applications for better performance and user experience",
-      thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=225&fit=crop&crop=center",
-      videoCount: "14 videos",
-      url: "https://www.youtube.com/watch?v=RqKA_TJKuFE&list=PLJ6UMyI6HnLFHSQOrfwhf3C7pZC6OzZYt",
-      category: "Web Development"
-    },
-    {
-      title: "React Advanced Concepts",
-      description: "Master advanced React patterns, hooks, and performance optimization techniques",
-      thumbnail: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=225&fit=crop&crop=center",
-      videoCount: "87 videos",
-      url: "https://www.youtube.com/watch?v=r384pWZIL_s&list=PLJ6UMyI6HnLFFvoMt9skouZRc1IFrgRgw",
-      category: "React"
-    },
-    {
-      title: "Machine Learning Fundamentals",
-      description: "Complete guide to machine learning algorithms and practical implementations",
-      thumbnail: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=225&fit=crop&crop=center",
-      videoCount: "4 videos",
-      url: "https://www.youtube.com/watch?v=yeufmGYwfkU&list=PLJ6UMyI6HnLGEkdvBf_pMpuszVw2dqfW5",
-      category: "ML/AI"
-    },
-    {
       title: "Cardiovascular Disease Management",
-      description: "Comprehensive guide to managing common cardiovascular conditions and treatment protocols",
-      thumbnail: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=225&fit=crop&crop=center",
+      description:
+        "Comprehensive guide to managing common cardiovascular conditions and treatment protocols",
+      thumbnail:
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=225&fit=crop&crop=center",
       videoCount: "14 videos",
       url: "#",
-      category: "Cardiology"
+      category: "Cardiology",
     },
     {
       title: "ECG Interpretation Mastery",
-      description: "Master ECG reading, arrhythmia identification, and clinical decision-making",
-      thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=225&fit=crop&crop=center",
+      description:
+        "Master ECG reading, arrhythmia identification, and clinical decision-making",
+      thumbnail:
+        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=225&fit=crop&crop=center",
       videoCount: "87 videos",
       url: "#",
-      category: "Cardiology"
+      category: "Cardiology",
     },
     {
       title: "Interventional Cardiology",
-      description: "Advanced techniques in cardiac catheterization, angioplasty, and structural heart interventions",
-      thumbnail: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=225&fit=crop&crop=center",
+      description:
+        "Advanced techniques in cardiac catheterization, angioplasty, and structural heart interventions",
+      thumbnail:
+        "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=225&fit=crop&crop=center",
       videoCount: "4 videos",
       url: "#",
-      category: "Cardiology"
+      category: "Cardiology",
     },
- 
   ];
 
   return (
@@ -61,13 +41,14 @@ const YouTubePlaylists: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            YouTube{" "}
+            Cardiology{" "}
             <span className="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
-              Playlists
+              Education
             </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Watch our comprehensive video tutorials covering programming, technology, and cardiology education topics
+            Comprehensive cardiology education covering diagnosis, treatment,
+            and clinical decision-making for healthcare professionals
           </p>
         </div>
 
@@ -75,7 +56,7 @@ const YouTubePlaylists: React.FC = () => {
         <div className="relative">
           {/* Playlist Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {playlists.slice(0, 3).map((playlist, index) => (
+            {playlists.slice(0, 6).map((playlist, index) => (
               <div
                 key={index}
                 className="bg-white dark:bg-black rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full"
@@ -125,10 +106,10 @@ const YouTubePlaylists: React.FC = () => {
               </div>
             ))}
           </div>
-          
+
           {/* Visit Channel Link */}
           <div className="text-center mt-8">
-            <a 
+            <a
               href="https://www.youtube.com/@TheFunnelEffect/playlists"
               target="_blank"
               rel="noopener noreferrer"
