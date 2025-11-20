@@ -22,12 +22,16 @@ const Hero: React.FC = () => {
               <span className="font-serif">The Funnel Effect.</span>
             </h1>
             <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-              Master cardiology through comprehensive medical education,
-              clinical insights, and evidence-based practices.
+              Transform your knowledge journey with expert-led content.
               <br />
-              Your trusted resource for advancing cardiovascular medicine and
-              patient care.
+              <span className="text-primary-300 font-medium">From code to cardiology - master what matters most.</span>
             </p>
+            <div className="mt-4 text-sm md:text-base text-white/70 italic">
+              "Where learning flows seamlessly from concept to mastery"
+            </div>
+            <div className="mt-2 text-xs md:text-sm text-white/60">
+              💡 Programming • 🫀 Cardiology • 📚 Knowledge • 🚀 Growth
+            </div>
           </div>
 
           {/* CTA Buttons */}
@@ -36,7 +40,7 @@ const Hero: React.FC = () => {
               href="/blogs"
               className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-full font-semibold transition-colors"
             >
-              Explore Cardiology
+              Start Learning
             </Link>
           </div>
 
@@ -45,7 +49,7 @@ const Hero: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-primary-400">
-                  100+
+                  500+
                 </div>
                 <div className="text-sm text-white/80 uppercase tracking-wide">
                   Articles
@@ -53,10 +57,10 @@ const Hero: React.FC = () => {
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-primary-400">
-                  50k+
+                  25k+
                 </div>
                 <div className="text-sm text-white/80 uppercase tracking-wide">
-                  Healthcare Pros
+                  Learners
                 </div>
               </div>
               <div className="text-center">
@@ -64,7 +68,7 @@ const Hero: React.FC = () => {
                   15+
                 </div>
                 <div className="text-sm text-white/80 uppercase tracking-wide">
-                  Specialties
+                  Topics
                 </div>
               </div>
               <div className="text-center">

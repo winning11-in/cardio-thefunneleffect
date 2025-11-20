@@ -37,7 +37,7 @@ export default function Home({ blogPosts, popularPosts, categories }: HomeProps)
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Latest{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
               Tutorials
             </span>
           </h2>
