@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-emerald-50 dark:from-green-950 dark:via-gray-900 dark:to-emerald-950">
+    <div className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-teal-50 dark:from-emerald-950 dark:via-gray-900 dark:to-teal-950">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-sm"
@@ -15,9 +15,9 @@ const Hero: React.FC = () => {
 
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-200/20 to-emerald-200/20 dark:from-green-800/20 dark:to-emerald-800/20"></div>
-        <div className="absolute top-20 left-20 w-32 h-32 bg-green-300/20 dark:bg-green-700/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-emerald-300/20 dark:bg-emerald-700/20 rounded-full blur-xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-200/20 to-teal-200/20 dark:from-emerald-800/20 dark:to-teal-800/20"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-emerald-300/20 dark:bg-emerald-700/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-teal-300/20 dark:bg-teal-700/20 rounded-full blur-xl"></div>
       </div>
 
       {/* Content */}
@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/blogs"
-              className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              className="bg-gradient-to-r from-emerald-500 via-green-600 to-teal-600 hover:from-emerald-600 hover:via-green-700 hover:to-teal-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
               Start Learning
             </Link>

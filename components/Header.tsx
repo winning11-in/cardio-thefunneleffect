@@ -63,7 +63,7 @@ const Header: React.FC = () => {
       <header className="md:hidden fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-green-200/30 dark:border-green-800/30 shadow-lg shadow-green-500/5 dark:shadow-green-500/10">
         <div className="flex items-center justify-between h-14 px-4">
           <Link href="/" className="flex items-center group">
-            <div className="w-7 h-7 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-2 group-hover:scale-110 transition-transform duration-200">
+                <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200 shadow-lg shadow-green-500/30">
               <span className="text-white text-xs font-bold">F</span>
             </div>
             <span className="text-gray-900 dark:text-white text-lg font-bold font-serif group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-200">The Funnel Effect</span>

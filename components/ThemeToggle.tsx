@@ -12,7 +12,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative w-14 h-8 bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900/50 dark:to-emerald-900/50 rounded-full p-1 transition-all duration-300   group"
+      className="relative w-14 h-8 bg-gradient-to-r from-emerald-100 via-green-50 to-teal-100 dark:from-emerald-900/40 dark:via-green-900/30 dark:to-teal-900/40 rounded-full p-1 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/25 group"
       title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
       {/* Toggle background */}
