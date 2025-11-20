@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-[600] leading-tight">
-              <span className="font-serif">Cardio Effect.</span>
+              <span className="font-serif">The Funnel Effect.</span>
             </h1>
             <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
               Master cardiology through comprehensive medical education,
