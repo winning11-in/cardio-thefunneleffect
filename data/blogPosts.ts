@@ -1446,6 +1446,237 @@ type RequiredUser = Required&lt;PartialUser&gt;;</code></pre>
     publishDate: "2024-11-28",
     image: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     author: "Funnel Effect"
+  },
+  {
+    id: "blog-cardio-001",
+    slug: "cardiology-basics-heart-anatomy-and-function",
+    title: "Cardiology Basics: Heart Anatomy and Function",
+    excerpt: "Master the fundamentals of cardiac anatomy and physiology. Learn about the heart's structure, chambers, valves, and how blood flows through the cardiovascular system.",
+    description: "Master the fundamentals of cardiac anatomy and physiology. Learn about the heart's structure, chambers, valves, and how blood flows through the cardiovascular system.",
+    content: `
+      <p>The heart is a remarkable organ that serves as the central pump of the circulatory system. Understanding its anatomy and function is crucial for any healthcare professional working in cardiology.</p>
+
+      <h2>Heart Anatomy</h2>
+      <p>The heart is divided into four chambers: two atria and two ventricles.</p>
+
+      <h3>The Four Chambers</h3>
+      <ul>
+        <li><strong>Right Atrium:</strong> Receives deoxygenated blood from the body</li>
+        <li><strong>Right Ventricle:</strong> Pumps blood to the lungs for oxygenation</li>
+        <li><strong>Left Atrium:</strong> Receives oxygenated blood from the lungs</li>
+        <li><strong>Left Ventricle:</strong> Pumps oxygenated blood to the body</li>
+      </ul>
+
+      <h3>Heart Valves</h3>
+      <p>Four valves ensure unidirectional blood flow:</p>
+      <ul>
+        <li><strong>Tricuspid Valve:</strong> Between right atrium and ventricle</li>
+        <li><strong>Pulmonary Valve:</strong> Between right ventricle and pulmonary artery</li>
+        <li><strong>Mitral Valve:</strong> Between left atrium and ventricle</li>
+        <li><strong>Aortic Valve:</strong> Between left ventricle and aorta</li>
+      </ul>
+
+      <h2>Cardiac Cycle</h2>
+      <p>The cardiac cycle consists of systole (contraction) and diastole (relaxation) phases.</p>
+
+      <h3>Systole</h3>
+      <p>During systole, the ventricles contract, pumping blood out of the heart.</p>
+
+      <h3>Diastole</h3>
+      <p>During diastole, the ventricles relax and fill with blood from the atria.</p>
+
+      <h2>Coronary Circulation</h2>
+      <p>The heart muscle itself requires oxygen-rich blood, supplied by the coronary arteries.</p>
+
+      <h3>Major Coronary Arteries</h3>
+      <ul>
+        <li><strong>Left Main Coronary Artery</strong></li>
+        <li><strong>Left Anterior Descending (LAD)</strong></li>
+        <li><strong>Left Circumflex (LCx)</strong></li>
+        <li><strong>Right Coronary Artery (RCA)</strong></li>
+      </ul>
+    `,
+    category: "Cardiology",
+    readTime: "6 min read",
+    date: "Nov 20, 2025",
+    publishDate: "2025-11-20",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&crop=center",
+    author: "Cardio Effect Team"
+  },
+  {
+    id: "blog-cardio-002",
+    slug: "ecg-interpretation-basics-normal-sinus-rhythm",
+    title: "ECG Interpretation Basics: Normal Sinus Rhythm",
+    excerpt: "Learn to identify normal sinus rhythm on ECG. Understand P waves, QRS complexes, T waves, and the key features that characterize normal cardiac conduction.",
+    description: "Learn to identify normal sinus rhythm on ECG. Understand P waves, QRS complexes, T waves, and the key features that characterize normal cardiac conduction.",
+    content: `
+      <p>Electrocardiogram (ECG) interpretation is a fundamental skill for healthcare professionals. Normal sinus rhythm represents the standard against which all other rhythms are compared.</p>
+
+      <h2>Components of a Normal ECG</h2>
+
+      <h3>P Wave</h3>
+      <p>The P wave represents atrial depolarization.</p>
+      <ul>
+        <li>Duration: < 0.12 seconds</li>
+        <li>Amplitude: < 2.5 mm</li>
+        <li>Configuration: Rounded, upright in leads I, II, aVF</li>
+      </ul>
+
+      <h3>PR Interval</h3>
+      <p>The PR interval represents the time from atrial depolarization to ventricular depolarization.</p>
+      <ul>
+        <li>Normal duration: 0.12-0.20 seconds</li>
+        <li>Represents AV nodal conduction time</li>
+      </ul>
+
+      <h3>QRS Complex</h3>
+      <p>The QRS complex represents ventricular depolarization.</p>
+      <ul>
+        <li>Duration: 0.06-0.12 seconds</li>
+        <li>Amplitude: Varies by lead</li>
+        <li>Normal QRS: < 0.12 seconds</li>
+      </ul>
+
+      <h3>ST Segment</h3>
+      <p>The ST segment represents the period between ventricular depolarization and repolarization.</p>
+      <ul>
+        <li>Normally isoelectric</li>
+        <li>Important for detecting ischemia</li>
+      </ul>
+
+      <h3>T Wave</h3>
+      <p>The T wave represents ventricular repolarization.</p>
+      <ul>
+        <li>Amplitude: Varies, but should be < 5 mm in limb leads</li>
+        <li>Normally upright in most leads</li>
+      </ul>
+
+      <h2>Normal Sinus Rhythm Criteria</h2>
+      <ol>
+        <li>Rate: 60-100 bpm</li>
+        <li>Rhythm: Regular</li>
+        <li>P waves: Present, normal morphology, one before each QRS</li>
+        <li>PR interval: 0.12-0.20 seconds, constant</li>
+        <li>QRS: < 0.12 seconds</li>
+      </ol>
+
+      <h2>Rate Calculation</h2>
+      <p>Use the following methods to calculate heart rate:</p>
+
+      <h3>300 Method</h3>
+      <p>Count the number of large boxes between R waves and divide into 300.</p>
+
+      <h3>1500 Method</h3>
+      <p>Count the number of small boxes between R waves and divide into 1500.</p>
+    `,
+    category: "Cardiology",
+    readTime: "8 min read",
+    date: "Nov 18, 2025",
+    publishDate: "2025-11-18",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=400&fit=crop&crop=center",
+    author: "Cardio Effect Team"
+  },
+  {
+    id: "blog-cardio-003",
+    slug: "hypertension-management-clinical-guidelines",
+    title: "Hypertension Management: Clinical Guidelines",
+    excerpt: "Comprehensive guide to hypertension diagnosis and management. Learn about blood pressure classification, risk stratification, and evidence-based treatment approaches.",
+    description: "Comprehensive guide to hypertension diagnosis and management. Learn about blood pressure classification, risk stratification, and evidence-based treatment approaches.",
+    content: `
+      <p>Hypertension affects over 1 billion people worldwide and is a major risk factor for cardiovascular disease. Proper management can significantly reduce cardiovascular morbidity and mortality.</p>
+
+      <h2>Blood Pressure Classification</h2>
+
+      <h3>ACC/AHA 2017 Guidelines</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Systolic BP (mmHg)</th>
+            <th>Diastolic BP (mmHg)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Normal</td>
+            <td>< 120</td>
+            <td>< 80</td>
+          </tr>
+          <tr>
+            <td>Elevated</td>
+            <td>120-129</td>
+            <td>< 80</td>
+          </tr>
+          <tr>
+            <td>Stage 1 HTN</td>
+            <td>130-139</td>
+            <td>80-89</td>
+          </tr>
+          <tr>
+            <td>Stage 2 HTN</td>
+            <td>≥ 140</td>
+            <td>≥ 90</td>
+          </tr>
+          <tr>
+            <td>Hypertensive Crisis</td>
+            <td>> 180</td>
+            <td>> 120</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Risk Stratification</h2>
+      <p>Hypertension management should consider overall cardiovascular risk.</p>
+
+      <h3>Major Risk Factors</h3>
+      <ul>
+        <li>Age (men ≥ 45, women ≥ 55)</li>
+        <li>Cigarette smoking</li>
+        <li>Dyslipidemia</li>
+        <li>Diabetes mellitus</li>
+        <li>Family history of premature CVD</li>
+      </ul>
+
+      <h3>Target Organ Damage</h3>
+      <ul>
+        <li>Left ventricular hypertrophy</li>
+        <li>Chronic kidney disease</li>
+        <li>Peripheral artery disease</li>
+        <li>Retinopathy</li>
+      </ul>
+
+      <h2>Treatment Approach</h2>
+
+      <h3>Lifestyle Modifications</h3>
+      <ul>
+        <li>Weight reduction</li>
+        <li>DASH eating plan</li>
+        <li>Sodium restriction (< 2.3 g/day)</li>
+        <li>Physical activity (150 min/week moderate intensity)</li>
+        <li>Moderation of alcohol consumption</li>
+      </ul>
+
+      <h3>Pharmacologic Treatment</h3>
+      <p>First-line agents include:</p>
+      <ul>
+        <li>ACE inhibitors/ARBs</li>
+        <li>Calcium channel blockers</li>
+        <li>Thiazide diuretics</li>
+      </ul>
+
+      <h3>Treatment Goals</h3>
+      <ul>
+        <li>Most patients: < 130/80 mmHg</li>
+        <li>High-risk patients: < 130/80 mmHg</li>
+        <li>Very high-risk patients: Consider < 120/80 mmHg</li>
+      </ul>
+    `,
+    category: "Cardiology",
+    readTime: "10 min read",
+    date: "Nov 15, 2025",
+    publishDate: "2025-11-15",
+    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=400&fit=crop&crop=center",
+    author: "Cardio Effect Team"
   }
 ];
 

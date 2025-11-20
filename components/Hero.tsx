@@ -1,17 +1,18 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')"
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/heroSec.jpg')",
         }}
       ></div>
-      
+
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <div className="space-y-8">
@@ -21,37 +22,58 @@ const Hero: React.FC = () => {
               <span className="font-serif">Cardio Effect.</span>
             </h1>
             <p className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-              Master the world of technology through comprehensive tutorials, guides, and insights.
-              <br />Your ultimate destination for learning programming, development, and tech skills.
+              Master cardiology through comprehensive medical education,
+              clinical insights, and evidence-based practices.
+              <br />
+              Your trusted resource for advancing cardiovascular medicine and
+              patient care.
             </p>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/blogs" className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-full font-semibold transition-colors">
-              Start Learning
+            <Link
+              href="/blogs"
+              className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-full font-semibold transition-colors"
+            >
+              Explore Cardiology
             </Link>
-          
           </div>
 
           {/* Stats */}
           <div className="pt-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary-400">100+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">Tutorials</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary-400">
+                  100+
+                </div>
+                <div className="text-sm text-white/80 uppercase tracking-wide">
+                  Articles
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary-400">25k+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">Learners</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary-400">
+                  50k+
+                </div>
+                <div className="text-sm text-white/80 uppercase tracking-wide">
+                  Healthcare Pros
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary-400">15+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">Topics</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary-400">
+                  15+
+                </div>
+                <div className="text-sm text-white/80 uppercase tracking-wide">
+                  Specialties
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary-400">5+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">Years</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary-400">
+                  5+
+                </div>
+                <div className="text-sm text-white/80 uppercase tracking-wide">
+                  Years
+                </div>
               </div>
             </div>
           </div>
@@ -85,4 +107,3 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
-            

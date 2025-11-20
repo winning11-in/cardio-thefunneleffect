@@ -28,6 +28,30 @@ const YouTubePlaylists: React.FC = () => {
       url: "https://www.youtube.com/watch?v=yeufmGYwfkU&list=PLJ6UMyI6HnLGEkdvBf_pMpuszVw2dqfW5",
       category: "ML/AI"
     },
+    {
+      title: "Cardiovascular Disease Management",
+      description: "Comprehensive guide to managing common cardiovascular conditions and treatment protocols",
+      thumbnail: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=225&fit=crop&crop=center",
+      videoCount: "14 videos",
+      url: "#",
+      category: "Cardiology"
+    },
+    {
+      title: "ECG Interpretation Mastery",
+      description: "Master ECG reading, arrhythmia identification, and clinical decision-making",
+      thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=225&fit=crop&crop=center",
+      videoCount: "87 videos",
+      url: "#",
+      category: "Cardiology"
+    },
+    {
+      title: "Interventional Cardiology",
+      description: "Advanced techniques in cardiac catheterization, angioplasty, and structural heart interventions",
+      thumbnail: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=225&fit=crop&crop=center",
+      videoCount: "4 videos",
+      url: "#",
+      category: "Cardiology"
+    },
  
   ];
 
@@ -43,7 +67,7 @@ const YouTubePlaylists: React.FC = () => {
             </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Watch our comprehensive video tutorials and deep-dive into various programming topics
+            Watch our comprehensive video tutorials covering programming, technology, and cardiology education topics
           </p>
         </div>
 

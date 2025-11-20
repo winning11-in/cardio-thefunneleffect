@@ -28,7 +28,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({
   children,
-  title = "Funnel Effect - Professional Writer & Creative Blogger",
+  title = "The Funnel Effect - Professional Writer & Creative Blogger",
   description = "Hello, I'm a content writer who is fascinated by content features, creativity and lifestyle. She helps brands bring the right content to the right people.",
   ogTitle,
   ogDescription,
