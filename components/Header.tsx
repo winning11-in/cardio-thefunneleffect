@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Menu, X, Home, BookOpen, Mail } from 'lucide-react';
+import { Home, BookOpen, Mail } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const router = useRouter();
 
   const navigation = [
@@ -16,63 +15,41 @@ const Header: React.FC = () => {
 
   return (
     <>
-      {/* Desktop Header */}
-      <header className="hidden md:block fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-green-200/30 dark:border-green-800/30 shadow-lg shadow-green-500/5 dark:shadow-green-500/10">
+      {/* Desktop Header: centered rounded pill UI (visual only) */}
+      <header className="hidden md:block fixed top-0 left-0 w-full z-50 pointer-events-none">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <Link href="/" className="flex items-center group">
-             
-                <span className="text-gray-900 dark:text-white text-xl font-bold font-serif group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-200">The Funnel Effect</span>
-              </Link>
+          <div className="flex items-center justify-center h-20">
+            <div className="w-full max-w-4xl bg-black/95 text-white dark:bg-gray-900/95 rounded-full px-3 py-2 flex items-center justify-between shadow-lg shadow-black/30 pointer-events-auto">
+                {/* Desktop Navigation on the left (logo removed) */}
+                <nav className="flex space-x-1 items-center">
+                  {navigation.map((item) => {
+                    const isActive = router.pathname === item.href;
+                    return (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className={`px-4 py-2 transition-colors duration-200 font-medium rounded-lg ${
+                          isActive
+                            ? 'text-green-400 dark:text-green-300'
+                            : 'text-gray-200 dark:text-gray-200/80 hover:text-green-400 dark:hover:text-green-400'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    );
+                  })}
+                </nav>
+
+              {/* Theme Toggle */}
+              <div className="flex items-center">
+                <ThemeToggle />
+              </div>
             </div>
-
-            {/* Desktop Navigation */}
-            <nav className="flex space-x-1">
-              {navigation.map((item) => {
-                const isActive = router.pathname === item.href;
-                return (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={`relative px-4 py-2 transition-all duration-200 font-medium rounded-lg group ${
-                      isActive
-                        ? 'text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/50'
-                        : 'text-gray-700 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/50'
-                    }`}
-                  >
-                    {item.name}
-                    <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-green-500 to-emerald-500 transition-all duration-300 ${
-                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`}></span>
-                  </Link>
-                );
-              })}
-            </nav>
-
-            {/* Theme Toggle */}
-            <div className="flex items-center">
-                 <ThemeToggle />
-             </div>
           </div>
         </div>
       </header>
 
-      {/* Mobile Header */}
-      <header className="md:hidden fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-green-200/30 dark:border-green-800/30 shadow-lg shadow-green-500/5 dark:shadow-green-500/10">
-        <div className="flex items-center justify-between h-14 px-4">
-          <Link href="/" className="flex items-center group">
-                <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200 shadow-lg shadow-green-500/30">
-              <span className="text-white text-xs font-bold">F</span>
-            </div>
-            <span className="text-gray-900 dark:text-white text-lg font-bold font-serif group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-200">The Funnel Effect</span>
-          </Link>
-          <div className="p-1 rounded-lg hover:bg-green-50 dark:hover:bg-green-900/50 transition-colors duration-200">
-            <ThemeToggle />
-          </div>
-        </div>
-      </header>
+      {/* Mobile Header removed (top header not shown on mobile) */}
 
       {/* Mobile Bottom Navigation */}
       <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-green-200/30 dark:border-green-800/30 shadow-lg shadow-green-500/5 dark:shadow-green-500/10">
