@@ -106,22 +106,79 @@ a {
   text-decoration: none;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar (WebKit browsers) */
+:root {
+  --scrollbar-thumb: #34D399; /* primary-400 */
+  --scrollbar-thumb-hover: #10B981; /* primary-500 */
+  --scrollbar-track: #F3F4F6; /* gray-100 */
+  --scrollbar-arrow: #0F1724; /* dark arrow */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --scrollbar-thumb: #059669; /* slightly darker green for dark */
+    --scrollbar-thumb-hover: #10B981;
+    --scrollbar-track: #0F1724; /* dark track */
+    --scrollbar-arrow: #FFFFFF;
+  }
+}
+
+/* Width + buttons */
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 14px;
+  height: 14px;
 }
 
+/* Track */
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-gray-800;
+  background: var(--scrollbar-track);
+  border-radius: 9999px;
 }
 
+/* Thumb */
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary-400 rounded-full;
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-500;
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Show native-like up/down arrow buttons and center small SVG arrows */
+::-webkit-scrollbar-button {
+  width: 14px;
+  height: 14px;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Up arrow */
+::-webkit-scrollbar-button:vertical:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230F1724' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 15l-6-6-6 6'/%3E%3C/svg%3E");
+}
+
+/* Down arrow */
+::-webkit-scrollbar-button:vertical:increment {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230F1724' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+}
+
+/* For dark mode override arrows to white */
+.dark ::-webkit-scrollbar-button:vertical:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 15l-6-6-6 6'/%3E%3C/svg%3E");
+}
+
+.dark ::-webkit-scrollbar-button:vertical:increment {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
 /* Focus styles */
