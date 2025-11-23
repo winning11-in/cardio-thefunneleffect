@@ -34,7 +34,7 @@ const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ post }) => {
             </p>
             <Link
               href="/blogs"
-              className="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 transform hover:-translate-y-0.5"
+              className="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Blogs
@@ -193,7 +193,7 @@ const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ post }) => {
               <div className="flex gap-3 flex-shrink-0">
                 <button
                   onClick={handleShare}
-                  className="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white px-5 py-2.5 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 transform hover:-translate-y-0.5 text-sm"
+                  className="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white px-5 py-2.5 rounded-xl font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5 text-sm"
                 >
                   <Share2 className="w-4 h-4 mr-2" />
                   Share

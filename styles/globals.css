@@ -26,6 +26,26 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  /* Greenish theme variables */
+  --green-50: #F4FBF8;
+  --green-100: #E6FBF1;
+  --green-300: #7FE1B8;
+  --green-400: #34D399;
+  --green-500: #10B981;
+  --green-600: #059669;
+  --green-700: #047857;
+
+  --teal-500: #06B6D4;
+  --mint-400: #88F1D6;
+
+  --bg: #FFFFFF;
+  --surface: #F7FBF9;
+  --muted: #94A3B8;
+  --text: #0F172A;
+  --dark-bg: #0F1724;
+  --accent: #06B6D4;
+  --border: #E6F5EE;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -116,7 +136,7 @@ a {
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 transform hover:-translate-y-0.5 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
   }
   
   .btn-secondary {
@@ -124,7 +144,7 @@ a {
   }
 
   .btn-coral {
-    @apply bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 transform hover:-translate-y-0.5;
+    @apply bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5;
   }
 
   .btn-outline {

@@ -141,7 +141,7 @@ const BlogCards: React.FC<{
         <div className="text-center mt-8">
           <Link
             href="/blogs"
-            className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-full font-medium text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 transform hover:-translate-y-0.5 inline-flex items-center"
+            className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-full font-medium text-sm transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5 inline-flex items-center"
           >
             View All Blogs
             <svg
