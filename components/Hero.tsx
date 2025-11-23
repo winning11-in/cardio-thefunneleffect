@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const Hero: React.FC = () => {
+  const quotes = [
+    '"The beautiful thing about learning is that no one can take it away from you." – B.B. King',
+    '"Learning never exhausts the mind." – Leonardo da Vinci',
+    '"The more that you read, the more things you will know. The more that you learn, the more places you\'ll go." – Dr. Seuss',
+    '"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela',
+  ];
+
+  const [currentQuote, setCurrentQuote] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentQuote((prev) => (prev + 1) % quotes.length);
+    }, 5000); // Change every 5 seconds
+    return () => clearInterval(interval);
+  }, [quotes.length]);
+
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-teal-50 dark:from-emerald-950 dark:via-gray-900 dark:to-teal-950">
       {/* Background Image */}
@@ -29,17 +45,13 @@ const Hero: React.FC = () => {
               The Funnel Effect
             </h1>
             <p className="text-lg md:text-2xl text-white max-w-2xl mx-auto leading-relaxed">
-              Transform your knowledge journey with expert-led content.
-              <br />
               <span className="text-green-300 font-medium">
-                From code to cardiology - master what matters most.
+                From fundamentals to advanced cardiology - master what matters
+                most.
               </span>
             </p>
             <div className="mt-4 text-sm md:text-base text-white/90 italic">
               "Where learning flows seamlessly from concept to mastery"
-            </div>
-            <div className="mt-2 text-xs md:text-sm text-white/80">
-              💡 Programming • 🫀 Cardiology • 📚 Knowledge • 🚀 Growth
             </div>
           </div>
 
@@ -53,42 +65,18 @@ const Hero: React.FC = () => {
             </Link>
           </div>
 
-          {/* Stats */}
-          <div className="pt-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-green-300">
-                  500+
-                </div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">
-                  Articles
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-green-300">
-                  25k+
-                </div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">
-                  Learners
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-green-300">
-                  15+
-                </div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">
-                  Topics
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-green-300">
-                  5+
-                </div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">
-                  Years
-                </div>
-              </div>
-            </div>
+          {/* Rotating Quotes */}
+          <div className="pt-8 relative h-20 flex items-center justify-center">
+            {quotes.map((quote, index) => (
+              <blockquote
+                key={index}
+                className={`text-lg md:text-xl text-white/90 italic max-w-2xl mx-auto text-center absolute transition-opacity duration-1000 ${
+                  index === currentQuote ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                {quote}
+              </blockquote>
+            ))}
           </div>
         </div>
       </div>
