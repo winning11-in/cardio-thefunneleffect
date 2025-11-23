@@ -125,8 +125,8 @@ a {
 
 /* Width + buttons */
 ::-webkit-scrollbar {
-  width: 14px;
-  height: 14px;
+  width: 8px;
+  height: 8px;
 }
 
 /* Track */
