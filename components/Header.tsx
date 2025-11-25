@@ -19,7 +19,7 @@ const Header: React.FC = () => {
       <header className="hidden md:block fixed top-0 left-0 w-full z-50 pointer-events-none">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center h-20">
-            <div className="w-full max-w-4xl bg-black/95 text-white dark:bg-gray-900/95 rounded-full px-3 py-2 flex items-center justify-between shadow-lg shadow-black/30 pointer-events-auto">
+            <div className="w-full max-w-4xl bg-white/95 text-black dark:bg-gray-900/95 dark:text-white rounded-full px-3 py-2 flex items-center justify-between shadow-lg shadow-black/30 pointer-events-auto">
                 {/* Desktop Navigation on the left (logo removed) */}
                 <nav className="flex space-x-1 items-center">
                   {navigation.map((item) => {
@@ -30,8 +30,8 @@ const Header: React.FC = () => {
                         href={item.href}
                         className={`px-4 py-2 transition-colors duration-200 font-medium rounded-lg ${
                           isActive
-                            ? 'text-green-400 dark:text-green-300'
-                            : 'text-gray-200 dark:text-gray-200/80 hover:text-green-400 dark:hover:text-green-400'
+                            ? 'text-green-600 dark:text-green-300'
+                            : 'text-gray-700 dark:text-gray-200/80 hover:text-green-600 dark:hover:text-green-400'
                         }`}
                       >
                         {item.name}

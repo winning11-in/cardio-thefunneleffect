@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { GetStaticProps } from "next";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import Layout from "@/components/Layout";
 import { pagesAPI, ApiPage } from "@/services/api";
 
@@ -140,7 +139,6 @@ const BlogsPage: React.FC<BlogsPageProps> = ({
   posts: initialPosts,
   categories: initialCategories,
 }) => {
-  const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -158,80 +156,16 @@ const BlogsPage: React.FC<BlogsPageProps> = ({
     return matchesSearch && matchesCategory;
   });
 
+  // Reset to page 1 when search or filter changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedCategory]);
+
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
   const currentPosts = filteredPosts.slice(
     (currentPage - 1) * postsPerPage,
     currentPage * postsPerPage
   );
-
-  // Reset to page 1 when search or filter changes
-  useEffect(() => {
-    // when search or category changes, reset to page 1 and update URL
-    setCurrentPage(1);
-    if (router && router.isReady) {
-      const nextQuery = { ...router.query, page: "1" };
-      router.push({ pathname: router.pathname, query: nextQuery }, undefined, {
-        shallow: true,
-      });
-    }
-  }, [searchTerm, selectedCategory, router]);
-
-  // Sync currentPage state with URL `?page=` param
-  useEffect(() => {
-    if (!router || !router.isReady) return;
-    const raw = router.query.page;
-    let parsed = 1;
-    if (typeof raw === "string") {
-      const n = parseInt(raw, 10);
-      if (!isNaN(n)) parsed = n;
-    } else if (Array.isArray(raw) && raw.length > 0) {
-      const n = parseInt(raw[0], 10);
-      if (!isNaN(n)) parsed = n;
-    }
-
-    // clamp page between 1 and totalPages
-    const totalPages = Math.max(
-      1,
-      Math.ceil(
-        posts.filter((post) => {
-          const matchesSearch =
-            post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            post.description.toLowerCase().includes(searchTerm.toLowerCase());
-          const matchesCategory =
-            selectedCategory === "All" || post.category === selectedCategory;
-          return matchesSearch && matchesCategory;
-        }).length / postsPerPage
-      )
-    );
-    const clamped = Math.max(1, Math.min(parsed, totalPages));
-    if (clamped !== currentPage) {
-      setCurrentPage(clamped);
-    }
-  }, [
-    router,
-    router?.query?.page,
-    posts,
-    searchTerm,
-    selectedCategory,
-    postsPerPage,
-    currentPage,
-  ]);
-
-  // handler to change page and update URL
-  const handlePageChange = (page: number) => {
-    const totalPages = Math.max(
-      1,
-      Math.ceil(filteredPosts.length / postsPerPage)
-    );
-    const clamped = Math.max(1, Math.min(page, totalPages));
-    setCurrentPage(clamped);
-    if (router && router.isReady) {
-      const nextQuery = { ...router.query, page: String(clamped) };
-      router.push({ pathname: router.pathname, query: nextQuery }, undefined, {
-        shallow: true,
-      });
-    }
-  };
 
   return (
     <Layout>
